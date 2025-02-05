@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Pinterest",
+        "url": "https://*.pinterest.com/pin/*",
+        "icon": "img/apps/pinterest.png",
+        "enabled": true,
+        "elements": [
+            {
+                "selector": "div[data-test-id=\"giftWrap\"]",
+                "action": "remove parent"
+            }
+        ]
+    },
+    {
+        "name": "X",
+        "url": "https://*.x.com/*",
+        "icon": "img/apps/x.png",
+        "enabled": true,
+        "module": "x",
+        "elements": [
+            {
+                "selector": "body",
+                "action": "void",
+                "func": "handleLoginWall"
+            }
+        ]
+    },
+    {
+        "name": "Quora",
+        "url": "https://*.quora.com/*",
+        "icon": "img/apps/quora.png",
+        "enabled": true,
+        "elements": [
+            {
+                "selector": "div.qu-zIndex--modal_desktop:first-of-type",
+                "action": "remove"
+            },
+            {
+                "selector": "div.qu-overflow--hidden:first-of-type",
+                "action": "attr",
+                "attributes": [
+                    {
+                        "name": "style",
+                        "value": ""
+                    }
+                ]
+            }
+        ],
+        "module": "quora"
+    },
+    {
+        "name": "Instagram",
+        "url": "https://*.instagram.com/*",
+        "icon": "img/apps/instagram.png",
+        "enabled": true,
+        "module": "instagram",
+        "elements": [
+            {
+                "selector": "body",
+                "action": "void",
+                "func": "removeLoginPopup"
+            }
+        ]
+    }
+]
